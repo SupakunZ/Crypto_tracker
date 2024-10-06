@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toolbar } from "@/components/Toolbar";
+import { Footer } from "@/components/Footer";
+import CoinProvider from "./context/CoinProvider";
+
+//React Query Component
+import ReactQueryProvider from "@/utils/ReactQueryProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +34,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ReactQueryProvider>
+          <CoinProvider>
+            <Toolbar />
+            {children}
+            <Footer />
+          </CoinProvider>
+        </ReactQueryProvider>
+
       </body>
     </html>
   );
