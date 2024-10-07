@@ -1,20 +1,23 @@
+'use client'
+
 import { CoinContext } from '@/app/context/CoinProvider'
 import formatPriceChange from '@/app/helpers/formatPriceChange'
 import priceFormatter from '@/app/helpers/priceFormatter'
 import { Coin } from '@/app/types/CoinTypes'
 import Image from 'next/image'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 
 //React Icon
 import { HiArrowSmUp as UpArrow } from 'react-icons/hi'
 import { HiArrowSmDown as DownArrow } from 'react-icons/hi'
+import { CoinDetailsModal } from './CoinDetailsModal'
 
 interface CoinCardProps {
   coin: Coin
 }
 
 export const CoinCard = ({ coin }: CoinCardProps) => {
-
+  let [isOpen, setIsOpen] = useState(false)
   const { currency } = useContext(CoinContext)
   const isPriceChangePositive = coin.price_change_percentage_1h_in_currency > 0 // boolean type # price per 1h มากกว่า 0 ไหม
   const priceChangeColor = isPriceChangePositive // เงื่อนไขเปลี่ยนสี
@@ -24,7 +27,7 @@ export const CoinCard = ({ coin }: CoinCardProps) => {
   return (
     <>
       <div className="flex justify-between gap-4 p-4 bg-white border rounded-md shadow-sm border-slate-200">
-        <button className="flex gap-4 text-left">
+        <button className="flex gap-4 text-left" onClick={() => setIsOpen(true)}>
           <Image
             className="aspect-square"
             width={48}
@@ -52,6 +55,7 @@ export const CoinCard = ({ coin }: CoinCardProps) => {
           </div>
         </div>
       </div>
+      <CoinDetailsModal coin={coin} isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   )
 }

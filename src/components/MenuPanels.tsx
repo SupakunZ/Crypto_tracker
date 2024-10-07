@@ -13,12 +13,16 @@ export const MenuPanels = () => {
 
   const { data, status } = useContext(CoinContext)
 
+  const refreshPage = (): void => {
+    window.location.reload()
+  }
+
   if (status === 'error')
     return (
       <div className="space-y-2 text-center">
         <div>Oops! Something went wrong...</div>
         <button
-          // onClick={refreshPage}
+          onClick={refreshPage}
           className="px-2 py-1 font-medium transition-colors bg-white border rounded-md shadow-sm border-slate-200 hover:text-emerald-500"
         >
           Try Again
