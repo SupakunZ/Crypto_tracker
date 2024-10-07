@@ -35,21 +35,23 @@ export default function CoinProvider({ children }: CoinProviderProps) {
   //React Query # 1.Fetch TrendingData
   const trendingQuery = useQuery({
     queryKey: ['trending'],
-    queryFn: () =>
-      axios(TRENDING_API_URL).then((res) => {
-        const data = res.data.coins.map((coin: { item: TrendingCoin }) => ({ ...coin.item })) // สร้าง map Array ใหม่เอาแค่ค่าที่อยู่ใน item
-        setTrending(data)
-      })
+    queryFn: async () => {
+      const response = await axios.get(TRENDING_API_URL)
+      const result = await response.data.coins.map((coin: { item: TrendingCoin }) => ({ ...coin.item })) // สร้าง map Array ใหม่เอาแค่ค่าที่อยู่ใน item
+      setTrending(result)
+      return result
+    }
   })
 
   //React Query # 2.Fetch CoinsData
   const { status } = useQuery({
     queryKey: ['coins', trendingQuery, currency], //**จะดึงค่าใหม่เมื่อ currency เปลี่ยนแปลง**
-    queryFn: () =>
-      axios(COINS_API_URL).then((res) => {
-        const data = res.data
-        setCoins(data)
-      })
+    queryFn: async () => {
+      const response = await axios.get(COINS_API_URL)
+      const data = await response.data
+      setCoins(data)
+      return data
+    }
   })
 
   //Update Nation
@@ -57,7 +59,6 @@ export default function CoinProvider({ children }: CoinProviderProps) {
     setCurrency(currency)
   }
 
-  console.log(coins)
   const data: CoinState = {
     trending,
     coins

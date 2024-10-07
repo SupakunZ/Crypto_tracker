@@ -6,25 +6,29 @@ import { TrendingCoinCard } from './TrendingCoinCard'
 import { CoinContext } from '@/app/context/CoinProvider'
 import { Coin, TrendingCoin } from '@/app/types/CoinTypes'
 import { CoinCard } from './CoinCard'
+import { Loading } from '@/app/Loading'
+
 
 export const MenuPanels = () => {
 
   const { data, status } = useContext(CoinContext)
 
-  // if (status === 'error')
-  //   return (
-  //     <div className="space-y-2 text-center">
-  //       <div>Oops! Something went wrong...</div>
-  //       <button
-  //         // onClick={refreshPage}
-  //         className="px-2 py-1 font-medium transition-colors bg-white border rounded-md shadow-sm border-slate-200 hover:text-emerald-500"
-  //       >
-  //         Try Again
-  //       </button>
-  //     </div>
-  //   )
+  if (status === 'error')
+    return (
+      <div className="space-y-2 text-center">
+        <div>Oops! Something went wrong...</div>
+        <button
+          // onClick={refreshPage}
+          className="px-2 py-1 font-medium transition-colors bg-white border rounded-md shadow-sm border-slate-200 hover:text-emerald-500"
+        >
+          Try Again
+        </button>
+      </div>
+    )
 
-  if (status === 'pending') return <h1>Loading...</h1>
+  if (status === 'pending') return (
+    Array(15).fill(null).map((d, i) => <Loading key={i} />)
+  )
 
   return (
     <TabPanels>
