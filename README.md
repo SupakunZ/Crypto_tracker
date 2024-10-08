@@ -10,6 +10,7 @@ https://github.com/user-attachments/assets/a7f2acdc-7dee-4c52-ae53-db5cdf2940cf
 
   <ul>
       <li>Displays the trending coins.</li>
+      <li>Change the displayed currency between USD and THB.</li>
       <li>Displays the top 100 cryptocurrencies with current prices.</li>
       <li>Shows a graph depicting the last 7 days' price trend of the selected coin.</li>
       <li>CoinGecko API for fetching cryptocurrency data, including prices and other relevant information.</li>
