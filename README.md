@@ -20,7 +20,8 @@ https://github.com/user-attachments/assets/a7f2acdc-7dee-4c52-ae53-db5cdf2940cf
   <ul>
       <li>NextJS</li>
       <li>Tailwind CSS</li>
-      <li>React Router</li>
+      <li>Axios</li>
+      <li>TypeScript</li>
   </ul>
 
 
