@@ -30,13 +30,13 @@ https://github.com/user-attachments/assets/a7f2acdc-7dee-4c52-ae53-db5cdf2940cf
 1. Clone this repository :
 
 ```bash
-git clone https://github.com/SupakunZ/Gunglz_Chatbot.git
+git clone https://github.com/SupakunZ/Crypto_tracker.git
 ```
 
 2. Navigate to the project folder and install dependencies :
 
 ```
-cd Gunglz_Chatbot
+cd Crypto_tracker
 npm install
 ```
 
