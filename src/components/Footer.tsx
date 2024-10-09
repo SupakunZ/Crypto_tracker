@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <footer className="py-4 mt-auto text-sm text-center border-t text-slate-400 border-slate-200">
+    <footer className="py-4 mt-auto text-sm text-center border-t text-slate-400 border-[#989898]">
       <p className="mx-2">
         CryptoTracker © {new Date().getFullYear()}{' '}  {/* Update Date*/}
         <a

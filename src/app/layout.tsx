@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[linear-gradient(180deg,_#0b004e,_#1d152f,_#002834)]`}
       >
         <ReactQueryProvider>
           <CoinProvider>
