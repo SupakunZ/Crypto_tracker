@@ -4,7 +4,7 @@ This application developed using CoinGecko API for fetching cryptocurrency data,
 https://github.com/user-attachments/assets/edfc1293-8363-4ad1-b9c1-4b8ec2531a2f
 
 ## 🎃 Live Demo 
-<a href='https://gunglz-chatbot.vercel.app/' target="_blank">Gunglz Chatbot</a>
+<a href='https://gunglz-chatbot.vercel.app/' target="_blank">CryptoTracker</a>
 
 ## 💀 Features
 
