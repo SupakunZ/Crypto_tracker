@@ -1,7 +1,7 @@
 # Crypto_Tracker
 This application developed using CoinGecko API for fetching cryptocurrency data, including prices and other relevant information and other uses of technology such as NextJs, Tailwind CSS, Axios, React Query.
 
-https://github.com/user-attachments/assets/a7f2acdc-7dee-4c52-ae53-db5cdf2940cf
+https://github.com/user-attachments/assets/edfc1293-8363-4ad1-b9c1-4b8ec2531a2f
 
 ## 🎃 Live Demo 
 <a href='https://gunglz-chatbot.vercel.app/' target="_blank">Gunglz Chatbot</a>
